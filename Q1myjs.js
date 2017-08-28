@@ -1,38 +1,65 @@
-$(document).ready(() => {
-      // Submit button
-      $("form").submit(function(event) {
-        event.preventDefault();
-        var searchTerm = $('#search-term').val().trim()
-        console.log("searchTerm is", searchTerm)
-      })
-      // let trails = [];
-      // // Start API
-      $.ajax({
-          url: 'https://api.outerspatial.com/v0',
-          type: 'GET',
-          dataType: 'json',
-          data: datastring,
-          success: function(data) {
-          console.log(data)
-          alert("Success!")
-          {
-            near_addr: near_addr,
-            distance: distance
-          },
+$(document).ready(function() {
+      $('#foo').on('submit', function(event) {
+          event.preventDefault()
 
+          $('#foo').on('submit', function() {
+            let address = $('#address').val().trim()
 
-            //
-              // trails = data['Search'].map((obj) => {
-              //   return {
-              //     title: obj['Title'],
-              //     poster: obj['Poster'],
-              //     year: obj['Year'],
-              //     id: obj['imdbID']
-            // }
+            // console.log(address)
 
+            $.get('https://api.outerspatial.com/v0/trailheads', {
+              near_addr: address,
+              distance: 5,
+              per_page: 10
+            }
+      //       // success)
+          ).done((response) => {
+      // console.log("data is", response)
+    // })
+      parseTrail(response)
+    // }).fail((err) => { console.log("a bad thing happened with getting trails", err) })
+  })
+})
 
+  // extract albums from JSON AND add to DOM
+  function parseTrail(response) {
+    let trails = response.data
+    console.log("parsing your trail, YO!", trails)
+    //
+    // // go through albums, extract the url, name and image, then render
+    for (let trail of trails) {
+      let trailName = trails.name
+      let trailLocation = trails.location
+      let trailDistance = trails.distance
+
+      console.log(trailName, trailLocation, trailDistance);
+
+      // renderAlbum(trailName, trailLocal, trailDistance)
+    }
+  }
+})
+})
+  //
+  // // add a trail to the result UL
+  // function renderTrail(trailName, trailLocation, trailDistance) {
+  //   let ul = $('ul.results')
+  //
+  //   let li = $('<li>').append(`<p>Trail Name:"${trailName}">
+  //         Trail Location: ${trailLocation}">
+  //         Trail Length(in meters): >${trailDistance}</p>
+  //       </a>`)
+  //   ul.append(li)
+  // }
+
+          //
+          // function success(data) {
+          //   console.log(data)
+          //   // parseTrail(data)
+          //   // add trail to the result UL
+          //   let ul = $('ul.results')
+          //   let li = $('<li>').append()
+          //   ul.append(li)
           // }
-        // ).done();
 
-      })
-    })
+          // })
+      // })
