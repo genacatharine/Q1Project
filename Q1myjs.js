@@ -28,38 +28,28 @@ $(document).ready(function() {
     //
     // // go through albums, extract the url, name and image, then render
     for (let trail of trails) {
-      let trailName = trails.name
-      let trailLocation = trails.location
-      let trailDistance = trails.distance
-
-      console.log(trailName, trailLocation, trailDistance);
-
-      // renderAlbum(trailName, trailLocal, trailDistance)
-    }
+      let trailName = trail.name
+      let trailLocation = trail.geometry.coordinates
+      let trailDistance = trail.distance_in_meters
+      // console.log(trailName + ", " + trailLocation + ", " + trailDistance + " meters")
+      renderTrail(trailName, trailLocation, trailDistance)
+}
   }
 })
-})
+
   //
   // // add a trail to the result UL
-  // function renderTrail(trailName, trailLocation, trailDistance) {
-  //   let ul = $('ul.results')
-  //
-  //   let li = $('<li>').append(`<p>Trail Name:"${trailName}">
-  //         Trail Location: ${trailLocation}">
-  //         Trail Length(in meters): >${trailDistance}</p>
-  //       </a>`)
-  //   ul.append(li)
-  // }
+  function renderTrail(trailName, trailLocation, trailDistance) {
+    let ol = $('ol.results')
+  console.log(trailName)
+    let li = $('<li>').append(`Trail Name: ${trailName}<br>
+           Location: ${trailLocation}<br>
+          Length(in meters): ${trailDistance}`)
+    ol.append(li)
 
-          //
-          // function success(data) {
-          //   console.log(data)
-          //   // parseTrail(data)
-          //   // add trail to the result UL
-          //   let ul = $('ul.results')
-          //   let li = $('<li>').append()
-          //   ul.append(li)
+  }
+
           // }
 
           // })
-      // })
+      })
