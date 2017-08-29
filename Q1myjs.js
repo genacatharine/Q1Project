@@ -6,18 +6,18 @@ $(document).ready(function() {
       let address = $('#address').val().trim()
 
       // console.log(address)
-
+// Get data from API
       $.get('https://api.outerspatial.com/v0/trailheads', {
           near_addr: address,
           distance: 5,
           per_page: 5
         }
-        //       // success)
+ // success
       ).done((response) => {
         console.log("done data is", response)
         // })
         parseTrail(response)
-        // }).fail((err) => { console.log("a bad thing happened with getting trails", err) })
+
       })
 
 
