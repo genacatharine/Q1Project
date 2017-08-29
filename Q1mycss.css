@@ -5,14 +5,28 @@ h1 {
 body {
   font-family: 'Permanent Marker';
   text-align: center;
+  height: 100%;
 }
 
-#hopethisworks {
+.parallax {
+  height: 100%;
   background-image: url(img/hike.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+
 
 .nav {
   color: white;
+}
+
+ol
+{
+   display: inline-block;
+   margin-left: auto;
+   margin-right: auto;
 }
