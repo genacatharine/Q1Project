@@ -1,4 +1,3 @@
-
 h1 {
   font-size: 50px;
 }
@@ -6,11 +5,14 @@ h1 {
 body {
   font-family: 'Permanent Marker';
   text-align: center;
-  
 }
 
 #hopethisworks {
-background-image: url(img/hike.jpg);
- background-repeat: no-repeat;
- background-size: cover;
+  background-image: url(img/hike.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.nav {
+  color: white;
 }
