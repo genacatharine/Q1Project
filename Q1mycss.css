@@ -33,8 +33,9 @@ body {
 }
 
 .todo {
-  margin: auto;
+
   display: block;
+  margin: 0 auto
 }
 
 .bkimg {
