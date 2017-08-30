@@ -5,7 +5,6 @@ $(document).ready(function() {
 
       let address = $('#address').val().trim()
 
-      // console.log(address)
 // Get data from API
       $.get('https://api.outerspatial.com/v0/trailheads', {
           near_addr: address,
@@ -14,7 +13,7 @@ $(document).ready(function() {
         }
  // success
       ).done((response) => {
-        console.log("done data is", response)
+        // console.log("done data is", response)
         // })
         parseTrail(response)
 
@@ -24,7 +23,7 @@ $(document).ready(function() {
     // extract albums from JSON AND add to DOM
     function parseTrail(response) {
       let trails = response.data
-      console.log("parsing your trail, YO!", trails)
+      // console.log("parsing your trail, YO!", trails)
 
       // // go through albums, extract the url, name and image, then render
       for (let trail of trails) {
@@ -44,14 +43,23 @@ $(document).ready(function() {
     // console.log("rendering trail", trailName);
     let ol = $('ol.results')
     // console.log(trailName)
-    let li = $('<li>').append(`Trail Name: ${trailName}<br>
-           Location: <a href="http://maps.google.com/?q=${trailLocation}"  target="_blank">Link to Map</a><br>
-          Length(in meters): ${trailDistance}`)
-    ol.append(li)
+    const $name = $('<li>').text(`Name: ${trailName}`);
+    const $location = $('<h6>').html(`Location: <a href="http://maps.google.com/?q=${trailLocation}" target="_blank">Link to Map</a>`);
+    const $distance = $('<h6>').text(`Length (meters): ${trailDistance}`);
+    const $button = $('<button>').addClass('toHike').text('Add to To-Hike List!');
+
+    $name.append($location, $distance, $button)
+    ol.append($name)
+
+    // let li = $('<li>').append(`Trail Name: ${trailName}<br>
+    //        Location: <a href="http://maps.google.com/?q=${trailLocation}"  target="_blank">Link to Map</a><br>
+    //       Length(in meters): ${trailDistance} <button type="button" onclick="myFunction()"
+    //       class="toHike">Add to To-Hike List!</button>`)
+    // ol.append(li)
 
   }
-
-  // }
-
-  // })
+// Add to to-hike list
+$("ol.li").on('click', 'button.toHike', function() {
+  alert(1);
+});
 })

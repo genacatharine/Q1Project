@@ -39,7 +39,16 @@
     </nav>
   </header>
   <main class="col col-lg-12 col-sm-12 container">
-  <img src="img/to-do-list.jpg" class="todo">
+    <div id="myDIV" class="header">
+  <h2>My To-Hike List</h2>
+  <input type="text" id="myInput" placeholder="Title...">
+  <span onclick="newElement()" class="addBtn">Add</span>
+</div>
+
+<ul id="todo">
+  <li id="listitem"></li>
+</ul>
+
   </main>
   <!-- Footer/copyright  -->
   <div id="footer">

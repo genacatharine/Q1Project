@@ -1,13 +1,14 @@
-
 @media screen and (orientation: portrait) {
-  img.todo { max-width: 90%; }
+  img.todo {
+    max-width: 90%;
+  }
 }
-
 
 h1 {
   font-size: 70px;
   text-align: center;
 }
+
 h5 {
   text-align: center;
 }
@@ -15,7 +16,7 @@ h5 {
 body {
   font-family: 'Permanent Marker';
 
-  height: 100%;
+
 }
 
 #foo {
@@ -29,19 +30,26 @@ body {
 
 .footer-copyright {
   color: white;
-    text-align: center;
+  text-align: center;
+}
+
+.results-area {
+  text-align: center;
+  list-style-position:inside;
 }
 
 .todo {
-
   display: block;
   margin: 0 auto
 }
 
+img {
+  height:100%;
+}
+
 .bkimg {
-  height: 100%;
+  height: 100vh; 
   background-image: url(img/hike.jpg);
-  /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -52,8 +60,10 @@ body {
   color: white;
 }
 
-ol {
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
+/* Style the header of ul */
+.header {
+    background-color: #f44336;
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
 }
