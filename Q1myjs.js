@@ -49,6 +49,7 @@ $(document).ready(function() {
     const $button = $('<button>').addClass('toHike').text('Add to To-Hike List!');
 
     $name.append($location, $distance, $button)
+    $name.on('click', liClickHandler);
     ol.append($name)
 
     // let li = $('<li>').append(`Trail Name: ${trailName}<br>
@@ -58,8 +59,10 @@ $(document).ready(function() {
     // ol.append(li)
 
   }
-// Add to to-hike list
-$("ol.li").on('click', 'button.toHike', function() {
-  alert(1);
-});
+
+  function liClickHandler(event) {
+    event.preventDefault();
+    console.log('Hell yeah!');
+  }
+  
 })

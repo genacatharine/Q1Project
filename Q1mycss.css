@@ -5,12 +5,14 @@
 }
 
 h1 {
+  padding-top: 90px;
   font-size: 70px;
   text-align: center;
 }
 
 h5 {
   text-align: center;
+  padding-bottom: 20px
 }
 
 body {
@@ -48,7 +50,7 @@ img {
 }
 
 .bkimg {
-  height: 100vh; 
+  height: 100vh;
   background-image: url(img/hike.jpg);
   background-attachment: fixed;
   background-position: center;
