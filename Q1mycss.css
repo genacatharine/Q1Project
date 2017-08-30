@@ -1,3 +1,9 @@
+
+@media screen and (orientation: portrait) {
+  img.todo { max-width: 90%; }
+}
+
+
 h1 {
   font-size: 70px;
   text-align: center;
@@ -26,7 +32,7 @@ body {
     text-align: center;
 }
 
-#todo {
+.todo {
   margin: auto;
   display: block;
 }
