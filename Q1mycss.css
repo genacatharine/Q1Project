@@ -17,6 +17,11 @@ h5 {
 
 body {
   font-family: 'Permanent Marker';
+  text-align: center;
+  /*min-height: 400px;
+margin-bottom: 100px;
+clear: both;*/
+   /*margin-bottom: 100px;*/
 
 
 }
@@ -25,10 +30,10 @@ body {
   text-align: center;
 }
 
-#footer body {
+/*#footer {
   background-color: rgb(52, 48, 49);
   text-align: center;
-}
+}*/
 
 .footer-copyright {
   color: white;
@@ -38,12 +43,33 @@ body {
 .results-area {
   text-align: center;
   list-style-position:inside;
+
+
 }
 
-.todo {
-  display: block;
-  margin: 0 auto
+.results {
+    overflow-y: scroll;
+    height: 200px;
 }
+
+.hidden{
+    display:none;
+}
+
+.unhidden{
+    display:block;
+}
+
+.paralsec2 {
+height: 100vh;
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+background-image: url("img/secondphoto.png");
+}
+
+.jumbotron{margin-bottom: 0;}
 
 img {
   height:100%;
@@ -63,9 +89,9 @@ img {
 }
 
 /* Style the header of ul */
-.header {
+/*.header {
     background-color: #f44336;
     padding: 30px 40px;
     color: white;
     text-align: center;
-}
+}*/

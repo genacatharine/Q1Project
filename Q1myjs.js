@@ -17,6 +17,7 @@ $(document).ready(function() {
         // })
         parseTrail(response)
 
+
       })
 
 
@@ -37,32 +38,45 @@ $(document).ready(function() {
     }
   })
 
-  //
   // // add a trail to the result UL
   function renderTrail(trailName, trailLocation, trailDistance) {
     // console.log("rendering trail", trailName);
     let ol = $('ol.results')
-    // console.log(trailName)
-    const $name = $('<li>').text(`Name: ${trailName}`);
-    const $location = $('<h6>').html(`Location: <a href="http://maps.google.com/?q=${trailLocation}" target="_blank">Link to Map</a>`);
-    const $distance = $('<h6>').text(`Length (meters): ${trailDistance}`);
-    const $button = $('<button>').addClass('toHike').text('Add to To-Hike List!');
 
-    $name.append($location, $distance, $button)
-    $name.on('click', liClickHandler);
-    ol.append($name)
+    const name = $('<li>').text(`Name: ${trailName}`);
+    const location = $('<h6>').html(`Location: <a href="http://maps.google.com/?q=${trailLocation}" target="_blank">Link to Map</a>`);
+    const distance = $('<h6>').text(`Length (meters): ${trailDistance}`);
+    const button = $('<button>').addClass('toHike').text('Add to my To-Hike List!').on('click', btnClickHandler);
+  console.log(location)
+    name.append(location, distance, button)
+    
+    ol.append(name)
 
-    // let li = $('<li>').append(`Trail Name: ${trailName}<br>
-    //        Location: <a href="http://maps.google.com/?q=${trailLocation}"  target="_blank">Link to Map</a><br>
-    //       Length(in meters): ${trailDistance} <button type="button" onclick="myFunction()"
-    //       class="toHike">Add to To-Hike List!</button>`)
-    // ol.append(li)
 
   }
-
-  function liClickHandler(event) {
+// add trail to to-hike list
+  function btnClickHandler(event) {
     event.preventDefault();
-    console.log('Hell yeah!');
+
+  // let chicken = $('li.trial').text()
+  //   console.log(chicken);
+   console.log($(this).text())
   }
-  
+
+  // unhide list title for search results list
+  // <div style="display: none;" id="hiddenText">This is hidden</div>
+
+  // function unhide() {
+      // $('.unhideMe').click=$('#hiddenText').show(); return false;
+// var item = $('');
+// if (item) {
+//     if(item.className=='hidden'){
+//         item.className = 'unhidden' ;
+//         clickedButton.value = 'hide'
+//     }else{
+//         item.className = 'hidden';
+//         clickedButton.value = 'unhide'
+    // }
+// }}
+
 })
