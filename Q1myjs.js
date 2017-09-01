@@ -46,21 +46,23 @@ $(document).ready(function() {
     const name = $('<li>').text(`Name: ${trailName}`);
     const location = $('<h6>').html(`Location: <a href="http://maps.google.com/?q=${trailLocation}" target="_blank">Link to Map</a>`);
     const distance = $('<h6>').text(`Length (meters): ${trailDistance}`);
-    const button = $('<button>').addClass('toHike').text('Add to my To-Hike List!').on('click', btnClickHandler);
-  console.log(location)
+    const button = $('<button>').addClass('toHike').text('Add to my To-Hike List!');
+    button.on('click', btnClickHandler);
+  // console.log(location)
     name.append(location, distance, button)
-    
+    // (".results").remove()
     ol.append(name)
 
 
   }
 // add trail to to-hike list
   function btnClickHandler(event) {
-    event.preventDefault();
-
-  // let chicken = $('li.trial').text()
-  //   console.log(chicken);
-   console.log($(this).text())
+//     // event.preventDefault();
+// $('.tohike').on('click', function(event) {
+  console.log(event.target)
+var liFromOrigList=$(event.target).parent();//based on what was clicked, grab the containig li
+console.log(liFromOrigList)
+$(liFromOrigList).clone().appendTo($('#todo'));//clone and append to to-hike list
   }
 
   // unhide list title for search results list
@@ -78,5 +80,19 @@ $(document).ready(function() {
 //         clickedButton.value = 'unhide'
     // }
 // }}
+
+// Get data
+//  name = localStorage.getItem("name")
+ // name = localStorage.getItem("name")
+  // name = localStorage.getItem("name")
+
+  // Set data
+// localStorage.setItem('Hiking Trail Name', trailName);
+// localStorage.setItem('Hiking Trail Location', trailLocation);
+// localStorage.setItem('Hiking Trail Length', trailDistance);
+
+/* Get some data */
+// localStorage.getItem("key");
+
 
 })

@@ -26,6 +26,11 @@ clear: both;*/
 
 }
 
+#todo button {
+  display: none;
+}
+
+
 #foo {
   text-align: center;
 }
