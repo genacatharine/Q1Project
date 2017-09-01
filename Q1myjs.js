@@ -81,18 +81,10 @@ $(liFromOrigList).clone().appendTo($('#todo'));//clone and append to to-hike lis
     // }
 // }}
 
-// Get data
-//  name = localStorage.getItem("name")
- // name = localStorage.getItem("name")
-  // name = localStorage.getItem("name")
 
   // Set data
-// localStorage.setItem('Hiking Trail Name', trailName);
-// localStorage.setItem('Hiking Trail Location', trailLocation);
-// localStorage.setItem('Hiking Trail Length', trailDistance);
+// localStorage.setItem('Hiking Trail Name', JSON.stringify(liFromOrigList)
 
-/* Get some data */
-// localStorage.getItem("key");
 
 
 })

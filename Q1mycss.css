@@ -26,6 +26,10 @@ clear: both;*/
 
 }
 
+#todo #listitem {
+  list-style-type: none;
+}
+
 #todo button {
   display: none;
 }
